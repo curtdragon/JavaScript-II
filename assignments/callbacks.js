@@ -2,49 +2,83 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
 
-  //Given this problem: 
+
+  // //Given this problem: 
   
-  function firstItem(arr, cb) {
-    // firstItem passes the first item of the given array to the callback function.
-  }
+  // function firstItem(arr, cb) {
+  //   // firstItem passes the first item of the given array to the callback function.
+  // }
 
-  // Potential Solution:
+  // // Potential Solution:
 
-  // Higher order function using "cb" as the call back
-  function firstItem(arr, cb) {
-    return cb(arr[0]);
-  }
+  // // Higher order function using "cb" as the call back
+  // function firstItem(arr, cb) {
+  //   return cb(arr[0]);
+  // }
 
-  // Function invocation 
-  firstItem(items, function(first) {
-    console.log(first)
-  });
-
-*/
+  // // Function invocation 
+  // firstItem(items, function(first) {
+  //   console.log(first)
+  // });
 
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
 }
+function getLength(arr, cb) {
+
+  return cb(arr.length);
+}
+getLength(items, function (arrLength) {
+  console.log(arrLength)
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
 }
 
+function last(arr, cb) {
+  
+  return cb(arr[arr.length-1]);
+}
+last(items, function (lastitem) {
+  console.log(lastitem)
+});
+
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
+function sumNums(x, y, cb) {
+  return cb(x+y);
+}
+sumNums(2, 4, function(sum) {
+  console.log(sum)
+});
+
+
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
+function multiplyNums(x, y, cb) {
+  return cb (x*y);
+}
+multiplyNums(2,4, function(multi) {
+  console.log(multi)
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+function contains(item, list, cb) {
+  return items.forEach(count=>console.log(count==item))
+}
+contains('Pencil',items, function(check) {
+  console.log(check)
+});
+
 
 /* STRETCH PROBLEM */
 
